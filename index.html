@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>URL decoder &amp; encoder</title>
+    <meta charset="utf-8" />
+    <style type="text/css" media="screen">
+        body {
+            background: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+        function decode() {
+            var obj = document.getElementById("url");
+            var url = obj.value;
+            obj.value = decodeURIComponent(url.replace(/\+/g, " "));
+        }
+
+        function encode() {
+            var obj = document.getElementById("url");
+            var url = obj.value;
+            obj.value = encodeURIComponent(url).replace(/'/g, "%27").replace(/"/g, "%22");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>URL decoder &amp; encoder</h1>
+
+    <textarea id="url" cols="80" rows="24"></textarea>
+
+    <p>
+    <input type="button" onclick="decode()" value="Decode" />
+    <input type="button" onclick="encode()" value="Encode" />
+    </p>
+
+</body>
+</html>
+
